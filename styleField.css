@@ -1,0 +1,149 @@
+.main__content__fields {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    width: 90%;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f4f4f4; 
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+.fields__form {
+    grid-column: span 1;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__group label {
+    padding-top: 8px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form__group input,
+.form__group select,
+.form__group textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.delete__button{
+    background-color: rgb(220, 48, 48);
+}
+.delete__button:hover{
+    background-color: red;
+}
+
+
+.fields__cards {
+    grid-column: span 1; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "total__fields total__fields"
+        "harvested__fields not__harvested__fields";
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card__total__fields {
+    grid-area: total__fields;
+    background-color: #F4A460;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.card__harvested__fields {
+    grid-area: harvested__fields;
+    background-color: #1E90FF;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
+
+.card__not__harvested__fields {
+    grid-area: not__harvested__fields;
+    background-color: #FF69B4;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
+
+
+
+.fields__table {
+    grid-column: span 2;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+@media (max-width: 768px) {
+    .main__content__fields {
+        grid-template-columns: 1fr;
+    }
+
+    .fields__form,
+    .fields__cards,
+    .fields__table {
+        grid-column: span 1;
+    }
+
+    .fields__cards {
+        grid-template-columns: 1fr;
+    }
+}

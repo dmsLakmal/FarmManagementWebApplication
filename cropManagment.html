@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Managment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCrops.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="auth.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="hamburger__icon" onclick="toggleSidebar()">☰</div>
+        <a href="/" id="navbar__logo">FARM MANAGMENT SYSTEM</a>
+        <div class="search__bar">
+            <form action="#">
+                <input type="text" placeholder="Search" name="search">
+                <button>
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Profile</button>
+            <div class="dropdown-content">
+              <a href="#">Log out</a>
+            </div>
+          </div>
+    </header>
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar__item"><a href="index.html">Dashboard</a></div>
+            <div class="sidebar__item sidebar__highlight"><a href="cropManagment.html">Crops Managment</a></div>
+            <div class="sidebar__item"><a href="wokersManagment.html">Wokers Managment</a></div>
+            <div class="sidebar__item"><a href="fieldManagment.html">Fields Managment</a></div>
+            <div class="sidebar__item"><a href="tasksManagment.html">Tasks Managment</a></div>
+            <div class="sidebar__item"><a href="inventoryManagment.html">Inventory</a></div>
+        </aside>
+        <main class="main__content__crops">
+            <div class="content__item01">
+                <h3>Add the Crops</h3>
+                <form id="cropForm" >
+                    <div class="form__group">
+                        <label for="cropName">Crop Name:</label>
+                        <input type="text" id="cropName" name="cropName" required>
+                    </div>
+        
+                    <div class="form__group">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required >
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="vegetable">Vegetable</option>
+                            <option value="fruit">Fruit</option>
+                            <option value="grain">Grain</option>
+                            <option value="herb">Herb</option>
+                            <option value="flower">Flower</option>
+                        </select>
+                    </div>
+        
+                    <div class="form__group">
+                        <label for="plantedDate">Planted Date:</label>
+                        <input type="date" id="plantedDate" name="plantedDate" required>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="plantedTime">Planted Time:</label>
+                        <input type="time" id="plantedTime" name="plantedTime" required>
+                    </div>
+        
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        
+            <div class="content__item02" id="formOutput">
+                <h3>Crop Details</h3>
+                <table id="cropDetailsTable">
+                    <thead>
+                        <tr>
+                            <th>Crop Name</th>
+                            <th>Category</th>
+                            <th>Planted Date</th>
+                            <th>Planted Time</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cropDetailsBody">
+                        <!-- dynamic data -->
+                    </tbody>
+                </table>
+            </div>
+            
+            
+            <div class="content__item03">
+                <div class="layout__container">
+                    <h2>Crop Stages</h2>
+                    
+                    <div class="first__row">
+                        <select id="cropSelect" class="dropdown__select" placeholder="Select crop">
+                            <option value="" disabled selected>Select crop</option>
+                        </select>
+                        <input type="date" id="currentDate" class="date__selector" placeholder="Select the current date" />
+                        <button class="check__stage">Show Stage</button>
+                    </div>
+                    
+                    <div class="second__row">
+                        <textarea id="dynamicText1" class="text-area circle" readonly></textarea>
+                        <textarea id="dynamicText2" class="text-area square" readonly></textarea>
+                    </div>
+                    
+                    <div class="third__row">
+                        <h3>Recomandations:</h3>
+                        <div id="recommendationText" class="text__area" readonly></div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+
+
+        </main>
+        
+    </div>
+    <footer class="footer">Footer</footer>
+    
+    
+    <script src="cropManagment.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

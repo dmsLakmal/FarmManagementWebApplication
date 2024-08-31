@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Managment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="auth.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="hamburger__icon" onclick="toggleSidebar()">☰</div>
+        <a href="/" id="navbar__logo">FARM MANAGMENT SYSTEM</a>
+        <div class="search__bar">
+            <form id="searchForm">
+                <input type="text" placeholder="Search" name="search" id="searchInput">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>            
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Profile</button>
+            <div class="dropdown-content">
+                <a href="#">Log out</a>
+            </div>
+          </div>
+    </header>
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar__item sidebar__highlight "><a href="index.html">Dashboard</a></div>
+            <div class="sidebar__item"><a href="cropManagment.html">Crops Managment</a></div>
+            <div class="sidebar__item"><a href="wokersManagment.html">Wokers Managment</a></div>
+            <div class="sidebar__item"><a href="fieldManagment.html">Fields Managment</a></div>
+            <div class="sidebar__item"><a href="tasksManagment.html">Tasks Managment</a></div>
+            <div class="sidebar__item"><a href="inventoryManagment.html">Inventory</a></div>
+        </aside>
+        <main class="main__content">
+            <div class="content__item">
+                <div class="container__crops">
+                    <h2 id="crops-title">Total Planted Crops: 0</h2>
+                    <ul id="crops-list">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="content__item">
+                <div class="container__workers">
+                    <h2 id="wokers__title" >Total Workers: <span id="totalWorkers"></span></h2>
+                    <canvas id="workersChart"></canvas>
+                </div>
+            </div>
+            <div class="content__item">
+                <div class="container__fields">
+                    <h2 id="fields__title">Total Fields: 0</h2>
+                    <ul id="fields__list">
+
+                    </ul>
+                </div>
+            </div>
+
+            
+
+            <div class="content__item">
+                <div class="container__tasks">
+                    <h2 id="tasks__title">Up Coming Tasks: 0</h2>
+                <ul id="tasks_list" >
+
+                </ul>
+                </div>
+            </div>
+            <div class="content__item">
+                <div class="container__wether">
+                    <div id="weather-info">Loading weather...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Sujith Lakmal. All rights reserved.</p>
+    </footer>
+    
+
+    <script src="app.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Managment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleInventory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="auth.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="hamburger__icon" onclick="toggleSidebar()">☰</div>
+        <a href="/" id="navbar__logo">FARM MANAGMENT SYSTEM</a>
+        <div class="search__bar">
+            <form action="#">
+                <input type="text" placeholder="Search" name="search">
+                <button>
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Profile</button>
+            <div class="dropdown-content">
+              <a href="#">Log out</a>
+            </div>
+          </div>
+    </header>
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar__item"><a href="index.html">Dashboard</a></div>
+            <div class="sidebar__item"><a href="cropManagment.html">Crops Managment</a></div>
+            <div class="sidebar__item"><a href="wokersManagment.html">Wokers Managment</a></div>
+            <div class="sidebar__item"><a href="fieldManagment.html">Fields Managment</a></div>
+            <div class="sidebar__item"><a href="tasksManagment.html">Tasks Managment</a></div>
+            <div class="sidebar__item sidebar__highlight"><a href="inventoryManagment.html">Inventory</a></div>
+        </aside>
+
+
+        <main class="main__content__inventory">
+            <section class="inventory__form">
+                <form>
+                    <div class="form__group">
+                        <h2>Add Items</h2>
+                        <label for="category">Select Category:</label>
+                        <select id="category" name="category">
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="Seeds">Seeds</option>
+                            <option value="Fertilizers">Fertilizers</option>
+                            <option value="Tools and Equipment">Tools and Equipment</option>
+                            <option value="Machinery">Machinery</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="purchase__date">Purchase Date:</label>
+                        <input type="date" id="purchase__date" name="purchase__date" required>
+                        
+                        <label for="expire__date">Expire Date (if any):</label>
+                        <input type="date" id="expire__date" name="expire__date">
+                        
+                        <label for="item__count">Item Count:</label>
+                        <input type="number" id="item__count" name="item__count" min="1" required>
+                        
+                        <button type="submit">Add Item</button>
+                    </div>
+                </form>
+            </section>
+        
+            <section class="inventory__cards">
+                <div class="card card__1">
+                    <h1>Total Seeds</h1>
+                    <div class="count" id="totalSeeds">0</div> 
+                </div>
+                <div class="card card__2">
+                    <h1>Total Fertilizers</h1>
+                    <div class="count" id="totalFertilizers">0</div> 
+                </div>
+                <div class="card card__3">
+                    <h1>Total Tools & Equipments</h1>
+                    <div class="count" id="totalTools">0</div> 
+                </div>
+                <div class="card card__4">
+                    <h1>Total Machineries</h1>
+                    <div class="count" id="totalMachineries">0</div> 
+                </div>
+                
+            </section>
+            
+            
+        
+            <section class="inventory__table">
+                <table id="inventoryDetailsTable">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Name</th>
+                            <th>Purchase Date</th>
+                            <th>Expire Date (if any)</th>
+                            <th>Item Count</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryDetailsBody">
+                        <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        
+
+
+    </div>
+
+    <footer class="footer">Footer</footer>
+    
+    
+    <script src="login.js"></script>
+    <script src="inventory.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

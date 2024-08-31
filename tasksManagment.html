@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm-Managment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleTasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="auth.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="hamburger__icon" onclick="toggleSidebar()">☰</div>
+        <a href="/" id="navbar__logo">FARM MANAGMENT SYSTEM</a>
+        <div class="search__bar">
+            <form action="#">
+                <input type="text" placeholder="Search" name="search">
+                <button>
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Profile</button>
+            <div class="dropdown-content">
+              <a href="#">Log out</a>
+            </div>
+          </div>
+    </header>
+    <div class="container">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar__item"><a href="index.html">Dashboard</a></div>
+            <div class="sidebar__item"><a href="cropManagment.html">Crops Managment</a></div>
+            <div class="sidebar__item"><a href="wokersManagment.html">Wokers Managment</a></div>
+            <div class="sidebar__item"><a href="fieldManagment.html">Fields Managment</a></div>
+            <div class="sidebar__item sidebar__highlight"><a href="tasksManagment.html">Tasks Managment</a></div>
+            <div class="sidebar__item"><a href="inventoryManagment.html">Inventory</a></div>
+        </aside>
+
+
+        <main class="main__content__tasks">
+            <section class="tasks__form">
+                <form>
+                    <div class="form__group">
+                        <h2>Add Task</h2>
+                        <label for="task__name">Task Name:</label>
+                        <input type="text" id="task__name" name="task__name" required>
+        
+                        <label for="task__priority">Priority:</label>
+                        <select id="task__priority" name="task__priority" required>
+                            <option value="" disabled selected>Select Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+        
+                        <label for="task__assigned__workers">Assign Workers:</label>
+                        <select id="task__assigned__workers" name="task__assigned__workers">
+
+                        </select>
+                        
+                        <label for="task__start__date">Start Date:</label>
+                        <input type="date" id="task__start__date" name="task__start__date" required>
+                        <input type="time" id="task__start__time" name="task__start__time" required>
+        
+                        <label for="task__end__date">End Date:</label>
+                        <input type="date" id="task__end__date" name="task__end__date" required>
+                        <input type="time" id="task__end__time" name="task__end__time" required>
+        
+                        <label for="task__description">Description:</label>
+                        <textarea id="task__description" name="task__description" required></textarea>
+        
+                        <button type="submit">Add Task</button>
+                    </div>
+                </form>
+            </section>
+        
+
+            <section class="tasks__cards">
+                <div class="task__view"><h1>View Tasks</h1></div>
+
+            </section>
+        
+
+            <section class="tasks__table">
+                <table id="tasksDetailsTable">
+                    <thead>
+                        <tr>
+                            <th>Task Name</th>
+                            <th>Priority</th>
+                            <th>Assign Workers</th>
+                            <th>Start Date & Time</th>
+                            <th>End Date & Time</th>
+                            <th>Description</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasksDetailsBody">
+
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        
+        
+
+
+    </div>
+
+    <footer class="footer">Footer</footer>
+    
+    
+    <script src="login.js"></script>
+    <script src="tasks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

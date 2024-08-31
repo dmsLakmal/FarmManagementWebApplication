@@ -1,0 +1,139 @@
+.main__content__inventory {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    width: 100%; 
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; 
+}
+
+
+.inventory__form {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+.form__group label {
+    padding-top: 8px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form__group input,
+.form__group select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.delete__button{
+    background-color: rgb(220, 48, 48);
+}
+.delete__button:hover{
+    background-color: red;
+}
+
+.inventory__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    /* gap: 10px; */
+    width: 100%; 
+}
+
+.card {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    margin-left: 60px;
+    margin-top: 35px;
+ 
+}
+.card__1{
+    background-color: #FFD700;
+}
+.card__2{
+    background-color: #FF6347;
+}
+.card__3{
+    background-color: #90EE90;
+    font-size: 13px;
+}
+.card__4{
+    background-color: #e990ee;
+}
+
+.inventory__cards h1 {
+    margin-bottom: 10px;
+}
+
+.count{
+    font-size: 50px;
+}
+
+
+
+.inventory__table {
+    grid-column: span 2;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; 
+}
+
+#inventoryDetailsTable {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+#inventoryDetailsTable th,
+#inventoryDetailsTable td {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+    font-size: 12px;
+}
+
+#inventoryDetailsTable th {
+    background-color: #f4f4f4; 
+    font-weight: bold; 
+}
+
+#inventoryDetailsTable td {
+    background-color: #fff; 
+}
+
+
+@media (max-width: 768px) {
+    .main__content__inventory {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory__form,
+    .inventory__cards,
+    .inventory__table {
+        grid-column: span 1;
+    }
+
+    .inventory__cards {
+        grid-template-columns: 1fr;
+    }
+}
